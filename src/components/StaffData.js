@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Avatar, Button } from '@mui/material';
+import '../App.css'
 
 const Home = () => {
    const [users, setUsers] = useState([]);
@@ -14,20 +15,21 @@ const Home = () => {
 
    return (
       <div>
-         <Typography variant="h5" component="h2">
-            Staff List
-         </Typography>
-         {users.map((staff) => (
-            <div key={staff.id}>
-               <Avatar alt={staff.name} src={staff.avatar} />
-               <Typography>{staff.name}</Typography>
-               <Typography>{staff.address}</Typography>
-               <Typography>{staff.age}</Typography>
-               <Button component={Link} to={`/detail/${staff.id}`} variant="outlined">
-                  View Details
-               </Button>
-            </div>
-         ))}
+         <div className='container'>
+            {users.map((staff) => (
+               <div className='column'>
+                  <div key={staff.id} className='card'>
+                     <Avatar alt={staff.name} src={staff.avatar} className='img' />
+                     <h3>{staff.name}</h3>
+                     <p>{staff.address}</p>
+                     <p>{staff.age}</p>
+                     <Button component={Link} to={`/detail/${staff.id}`} variant="outlined">
+                        View Details
+                     </Button>
+                  </div>
+               </div>
+            ))}
+         </div>
       </div>
    );
 };

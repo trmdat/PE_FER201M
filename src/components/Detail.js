@@ -24,9 +24,9 @@ const Detail = () => {
          <Typography variant="h5" component="h2">
             {user.name}
          </Typography>
-         <Typography>{user.address}</Typography>
-         <Typography>{user.age}</Typography>
-         <Typography>{user.createdAt}</Typography>
+         <Typography>Address: {user.address}</Typography>
+         <Typography>Age: {user.age}</Typography>
+         <Typography>Create at: {user.createdAt}</Typography>
 
       </div>
    );
